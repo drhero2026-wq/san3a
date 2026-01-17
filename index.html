@@ -2,58 +2,128 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>لوحة التعلم - كورس النجارة</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة صنايعي - تعلم حرفة بيدك</title>
     <style>
-        body { font-family: 'Tahoma', sans-serif; display: flex; height: 100vh; margin: 0; }
+        body { font-family: 'Tahoma', sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
         
-        /* القائمة الجانبية للفيديوهات */
-        .sidebar { width: 300px; background: #333; color: white; padding: 20px; overflow-y: auto; }
-        .sidebar h3 { color: #ffa500; border-bottom: 1px solid #555; padding-bottom: 10px; }
-        .video-list { list-style: none; padding: 0; }
-        .video-list li { padding: 15px; border-bottom: 1px solid #444; cursor: pointer; transition: 0.3s; }
-        .video-list li:hover { background: #444; }
-        .video-list li.active { background: #663399; font-weight: bold; }
+        /* الهيدر */
+        header { background-color: #663399; color: white; padding: 20px; text-align: center; }
+        
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        
+        /* الكورسات */
+        .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 40px; }
+        .course-card { background: white; padding: 15px; border-radius: 10px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .course-card h3 { color: #663399; margin-bottom: 5px; }
+        
+        /* قسم الدفع */
+        .payment-section { background: white; padding: 30px; border-radius: 15px; border: 2px solid #28a745; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .price-tag { font-size: 30px; color: #28a745; font-weight: bold; }
+        .instapay-box { background: #eee; padding: 10px; border-radius: 5px; font-size: 24px; font-weight: bold; margin: 10px 0; letter-spacing: 1px; color: #333; }
+        
+        /* النماذج والأزرار */
+        input, select, button { width: 100%; padding: 12px; margin-top: 5px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ddd; box-sizing: border-box; }
+        button { background-color: #663399; color: white; font-size: 18px; font-weight: bold; cursor: pointer; border: none; }
+        button:hover { background-color: #52277c; }
+        
+        .checkbox-group { text-align: right; margin-bottom: 20px; background: #fafafa; padding: 10px; border-radius: 5px; }
+        .checkbox-group label { display: block; margin-bottom: 8px; cursor: pointer; font-size: 16px; }
 
-        /* منطقة تشغيل الفيديو */
-        .main-content { flex: 1; padding: 20px; background: #f4f4f4; text-align: center; }
-        .video-player { width: 100%; max-width: 800px; height: 450px; background: black; margin: auto; display: flex; align-items: center; justify-content: center; color: white; border-radius: 10px; }
-        
-        .status-badge { background: #28a745; color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; position: absolute; top: 20px; left: 20px; }
+        /* الفوتر (الشكاوي) */
+        footer { text-align: center; margin-top: 50px; padding: 20px; background-color: #333; color: white; }
+        .support-number { color: #ffc107; font-weight: bold; font-size: 18px; text-decoration: none; }
     </style>
 </head>
 <body>
 
-    <div class="sidebar">
-        <h3>🪵 كورس النجارة</h3>
-        <ul class="video-list">
-            <li class="active">1. أدوات النجار الأساسية</li>
-            <li>2. أنواع الخشب والفرق بينهم</li>
-            <li>3. القياس والعلام الصحيح</li>
-            <li>4. تقنيات القص بالمنشار</li>
-            <li>5. التجميع بالمسامير</li>
-            <li>6. التجميع بالغراء والبراغي</li>
-            <li>7. أسرار الصنفرة</li>
-            <li>8. مشروع: صندوق خشبي</li>
-            <li>9. مشروع: رف حائط</li>
-            <li>10. الدهان والتشطيب</li>
-        </ul>
-        <br>
-        <button onclick="alert('سيتم تجديد الاشتراك يدوياً الشهر القادم')" style="width:100%; padding:10px; background:#d9534f; color:white; border:none; cursor:pointer;">نهاية الاشتراك: 30 يوم</button>
+<header>
+    <h1>🛠️ منصة صنايعي</h1>
+    <p>تعلم: نجارة - سباكة - تطريز - فخار | بالذكاء الاصطناعي</p>
+</header>
+
+<div class="container">
+
+    <h2 style="text-align: center;">المسارات التعليمية المتاحة</h2>
+    <div class="courses-grid">
+        <div class="course-card"><h3>🪑 نجارة</h3><p>10 فيديوهات من الصفر للاحتراف</p></div>
+        <div class="course-card"><h3>🚰 سباكة</h3><p>صيانة منزلية شاملة</p></div>
+        <div class="course-card"><h3>🧵 تطريز</h3><p>فنون الخيط والإبرة</p></div>
+        <div class="course-card"><h3>🏺 فخار</h3><p>تشكيل الطين والخزف</p></div>
     </div>
 
-    <div class="main-content">
-        <span class="status-badge">🟢 اشتراك مفعل: باقة النجارة</span>
-        <h1>1. أدوات النجار الأساسية</h1>
+    <div class="payment-section" id="subscribe">
+        <h2 style="text-align: center; color: #663399;">اشترك الآن وابدأ التعلم</h2>
         
-        <div class="video-player">
-            <div>
-                <h2>▶️ مشغل الفيديو</h2>
-                <p>(فيديو مولد بالذكاء الاصطناعي - المدة 10:00)</p>
-            </div>
-        </div>
+        <form>
+            <label><strong>1. اختر الباقة المناسبة:</strong></label>
+            <select id="packageSelect" onchange="updateForm()">
+                <option value="20">الباقة الفردية (كورس واحد) - 20 ج.م</option>
+                <option value="35">الباقة الثنائية (كورسين) - 35 ج.م</option>
+                <option value="60">باقة الوحش (كل الكورسات) - 60 ج.م</option>
+            </select>
 
-        <p style="margin-top: 20px; color: #666;">في هذا الدرس سنتعرف على الشاكوش، الكماشة، المتر، والزاوية القائمة.</p>
+            <label><strong>2. حدد الكورسات المطلوبة:</strong></label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="course" value="carpentry" onchange="checkLimit()"> نجارة</label>
+                <label><input type="checkbox" name="course" value="plumbing" onchange="checkLimit()"> سباكة</label>
+                <label><input type="checkbox" name="course" value="embroidery" onchange="checkLimit()"> تطريز</label>
+                <label><input type="checkbox" name="course" value="pottery" onchange="checkLimit()"> فخار</label>
+            </div>
+
+            <div style="text-align: center; background: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 1px dashed #ccc;">
+                <p style="margin: 0;">المبلغ المطلوب تحويله:</p>
+                <div class="price-tag" id="priceDisplay">20 جنيه مصري</div>
+                
+                <hr style="margin: 10px 0; border: 0; border-top: 1px solid #ddd;">
+                
+                <p style="margin: 0;">رقم إنستا باي للتحويل:</p>
+                <div class="instapay-box">01019666392</div>
+                <small style="color: red;">* تأكد من التحويل لنفس الرقم الموضح بالأعلى</small>
+            </div>
+
+            <label><strong>3. تأكيد الدفع:</strong></label>
+            <input type="text" placeholder="اسمك أو رقم المحفظة المحول منها" required>
+            
+            <label>صورة التحويل (Screenshot):</label>
+            <input type="file" required accept="image/*">
+
+            <button type="button" onclick="alert('تم إرسال طلبك بنجاح! سيتم مراجعة الدفع وتفعيل الحساب قريباً.')">إرسال طلب الاشتراك</button>
+        </form>
     </div>
 
-</body>
-</html>
+</div>
+
+<footer>
+    <p>جميع الحقوق محفوظة © منصة صنايعي 2026</p>
+    <p>واجهت مشكلة في الدفع أو التفعيل؟</p>
+    <p>تواصل معنا واتساب للشكاوي: <a href="https://wa.me/201011314747" class="support-number">01011314747</a></p>
+</footer>
+
+<script>
+    function updateForm() {
+        var select = document.getElementById("packageSelect");
+        var priceDisplay = document.getElementById("priceDisplay");
+        var checkboxes = document.getElementsByName("course");
+        
+        priceDisplay.innerText = select.value + " جنيه مصري";
+
+        // إعادة تعيين الكورسات المختارة عند تغيير الباقة
+        for(var i=0; i<checkboxes.length; i++) {
+            checkboxes[i].checked = false;
+            checkboxes[i].disabled = false;
+        }
+
+        // إذا اختار باقة الوحش، نختار كل الكورسات تلقائياً
+        if(select.value == "60") { 
+            for(var i=0; i<checkboxes.length; i++) {
+                checkboxes[i].checked = true;
+                checkboxes[i].disabled = true; 
+            }
+        }
+    }
+
+    function checkLimit() {
+        var select = document.getElementById("packageSelect");
+        var checkboxes = document.getElementsByName("course");
+        var limit
